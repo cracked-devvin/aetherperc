@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+
+# clean URLs: /trade and /whitepaper serve the .html files (no redirect hop)
+[[redirects]]
+  from = "/trade"
+  to = "/trade.html"
+  status = 200
+
+[[redirects]]
+  from = "/whitepaper"
+  to = "/whitepaper.html"
+  status = 200
+
+[[redirects]]
+  from = "/tokenomics"
+  to = "/tokenomics.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
